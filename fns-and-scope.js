@@ -30,8 +30,8 @@ function getName() {
   return userName;
 }
 
-var testUserName = getName();
-alert("Welcome, " + testUserName);
+//var testUserName = getName();
+//alert("Welcome, " + testUserName);
 
 //////////////////PROBLEM 3////////////////////
 
@@ -43,7 +43,7 @@ alert("Welcome, " + testUserName);
   //Code Here
 function welcome () {
   getName ();
-  alert("Welcome, " + testUserName);
+  //alert("Welcome, " + testUserName);
 }
 
 //////////////////PROBLEM 4////////////////////
@@ -97,7 +97,7 @@ var newMyName = myName();
 
 
 //Now alert the result of invoking newMyName
-alert(newMyName);
+//alert(newMyName);
 
 
 //////////////////PROBLEM 7////////////////////
@@ -108,13 +108,24 @@ alert(newMyName);
 
   //Code Here
 function outerFn() {
-  return getName();
+
+  return function() {
+    getName();
+  }
 }
+
+var finalTest = outerFn();
+alert(finalTest);
 //Now save the result of invoking outerFn into a variable called innerFn.
 
-  //Code Here
-var function innerFn() {
-  outerFn();
-  
-}
+
+  //Code Herefunction innerFn() {
+//var innerFn = function(outerFn) {
+//  return ;
+//}
+
+
 //Now invoke innerFn.
+//innerFn();
+//var finalTest = innerFn();
+//alert(finalTest);
